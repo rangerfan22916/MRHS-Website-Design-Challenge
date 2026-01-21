@@ -1,0 +1,104 @@
+[
+  {
+    "date": "2026-01-15",
+    "grade": "junior",
+    "title": "Meet With School Counselor",
+    "description": "Discuss graduation requirements, GPA, testing plans, and initial college goals."
+  },
+  {
+    "date": "2026-02-01",
+    "grade": "junior",
+    "title": "Create College Interest List",
+    "description": "Begin researching colleges based on location, size, majors, and admissions requirements."
+  },
+  {
+    "date": "2026-03-01",
+    "grade": "junior",
+    "title": "Begin SAT / ACT Preparation",
+    "description": "Start consistent test prep using online tools, books, or tutoring if needed."
+  },
+  {
+    "date": "2026-04-01",
+    "grade": "junior",
+    "title": "Register for Spring SAT / ACT",
+    "description": "Sign up early to secure preferred test dates and locations."
+  },
+  {
+    "date": "2026-05-15",
+    "grade": "junior",
+    "title": "Take AP Exams",
+    "description": "AP scores may earn college credit or strengthen applications."
+  },
+  {
+    "date": "2026-06-01",
+    "grade": "junior",
+    "title": "Ask for Letters of Recommendation",
+    "description": "Request recommendations from teachers before summer break."
+  },
+  {
+    "date": "2026-06-15",
+    "grade": "junior",
+    "title": "Visit Colleges (Virtual or In-Person)",
+    "description": "Explore campuses to refine your college list."
+  },
+  {
+    "date": "2026-07-01",
+    "grade": "junior",
+    "title": "Create Common App Account",
+    "description": "Familiarize yourself with application sections and requirements."
+  },
+  {
+    "date": "2026-08-01",
+    "grade": "junior",
+    "title": "Start College Essays",
+    "description": "Draft personal statements and supplemental essays early."
+  },
+  {
+    "date": "2026-09-01",
+    "grade": "senior",
+    "title": "Finalize College List",
+    "description": "Confirm where you will apply and which deadlines apply to each school."
+  },
+  {
+    "date": "2026-10-01",
+    "grade": "senior",
+    "title": "FAFSA Opens",
+    "description": "Submit financial aid forms as early as possible."
+  },
+  {
+    "date": "2026-10-15",
+    "grade": "senior",
+    "title": "Early Decision / Early Action Deadlines",
+    "description": "Submit early applications if applicable."
+  },
+  {
+    "date": "2026-11-01",
+    "grade": "senior",
+    "title": "Scholarship Applications Begin",
+    "description": "Apply for local, state, and national scholarships."
+  },
+  {
+    "date": "2026-12-01",
+    "grade": "senior",
+    "title": "Confirm Recommendations & Transcripts",
+    "description": "Ensure all supporting documents have been submitted."
+  },
+  {
+    "date": "2027-01-01",
+    "grade": "senior",
+    "title": "Regular Decision Deadlines",
+    "description": "Submit remaining college applications."
+  },
+  {
+    "date": "2027-03-15",
+    "grade": "senior",
+    "title": "Admission Decisions Released",
+    "description": "Review acceptance letters and financial aid offers."
+  },
+  {
+    "date": "2027-05-01",
+    "grade": "senior",
+    "title": "National College Decision Day",
+    "description": "Submit enrollment deposit to the college you choose."
+  }
+]
