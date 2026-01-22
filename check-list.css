@@ -1,64 +1,141 @@
-body {
-  font-family: Arial, sans-serif;
-  background: #f4f6f8;
-}
-
+/* ===== MAIN CONTAINER ===== */
 .container {
-  max-width: 600px;
-  margin: 40px auto;
-  background: white;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-color: #0f172a; /* slate-900 */
+    border: 1px solid #1e293b; /* slate-800 */
+    border-radius: 16px;
+    padding: 32px;
+    color: #e5e7eb;
 }
 
-h1 {
-  text-align: center;
+/* ===== HEADINGS ===== */
+.container h1 {
+    color: #38bdf8; /* soft cyan */
+    font-weight: 700;
 }
 
+.container p {
+    color: #cbd5f5;
+}
+
+/* ===== ADD TASK BAR ===== */
+.add-task {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 28px;
+}
+
+.add-task input {
+    flex: 1;
+    padding: 14px 16px;
+    font-size: 1rem;
+    background-color: #020617; /* deep navy */
+    border: 2px solid #334155;
+    border-radius: 12px;
+    color: #f8fafc;
+}
+
+.add-task input::placeholder {
+    color: #94a3b8;
+}
+
+.add-task input:focus {
+    outline: none;
+    border-color: #38bdf8;
+}
+
+/* BIG FRIENDLY BUTTON */
+.add-task button {
+    padding: 14px 26px;
+    font-size: 1rem;
+    border-radius: 12px;
+    border: none;
+    background-color: #38bdf8;
+    color: #020617;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.add-task button:hover {
+    background-color: #7dd3fc;
+}
+
+/* ===== FILTER BUTTONS ===== */
+button {
+    padding: 12px 22px;
+    font-size: 0.95rem;
+    border-radius: 10px;
+    border: 2px solid #334155;
+    background-color: #020617;
+    color: #e5e7eb;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #1e293b;
+}
+
+/* ===== PROGRESS BAR ===== */
+progress {
+    width: 100%;
+    height: 18px;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #020617;
+    border-radius: 12px;
+}
+
+progress::-webkit-progress-value {
+    background-color: #38bdf8;
+    border-radius: 12px;
+}
+
+/* ===== CHECKLIST ===== */
 ul {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
+    margin-top: 24px;
 }
 
 li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px;
-  border-bottom: 1px solid #ddd;
+    background-color: #020617;
+    border: 2px solid #1e293b;
+    border-radius: 14px;
+    padding: 18px;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
 }
 
-label {
-  flex: 1;
-  margin-left: 10px;
+/* Checkbox */
+input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
 }
 
-.deadline {
-  font-size: 0.85em;
-  color: #666;
+/* Completed task */
+input[type="checkbox"]:checked + strong {
+    text-decoration: line-through;
+    opacity: 0.6;
 }
 
-.progress {
-  height: 10px;
-  background: #ddd;
-  border-radius: 5px;
-  margin: 20px 0;
+/* Overdue task */
+li.overdue {
+    border-left: 6px solid #ef4444;
 }
-
-#progress-bar {
-  height: 100%;
-  width: 0%;
-  background: #4caf50;
-  border-radius: 5px;
-  transition: width 0.3s;
+.container {
+    max-width: 900px;      /* keeps it readable */
+    margin: 60px auto;     /* space top/bottom + auto left/right */
+    padding: 32px 36px;    /* inner spacing */
+    background-color: #0f172a;
+    border: 1px solid #1e293b;
+    border-radius: 16px;
+    color: #e5e7eb;
 }
-.deadline {
-  font-size: 0.85em;
-  color: #555;
-}
-
-.deadline.overdue {
-  color: #d32f2f;
-  font-weight: bold;
+@media (max-width: 768px) {
+    .container {
+        margin: 24px 16px;
+        padding: 24px;
+    }
 }

@@ -6,20 +6,34 @@
   <link rel="stylesheet" href="check-list.css">
 </head>
 <body>
+<div class="container">
+ 
 
-  <div class="container">
-    <h1>🎓 College Application Checklist</h1>
-    <p>Stay on track with your applications</p>
 
-    <div class="progress">
-      <div id="progress-bar"></div>
-    </div>
+  <h1>College Application Checklist</h1>
+  <p>Track your application deadlines</p>
 
-    <ul id="checklist">
-      <!-- Items added by JS -->
-    </ul>
+  <progress id="progress" value="0" max="100"></progress>
+  <p id="progress-text"></p>
+
+  <div>
+    <button onclick="setFilter('all')">All</button>
+    <button onclick="setFilter('overdue')">Overdue</button>
+    <button onclick="setFilter('completed')">Completed</button>
+    <div class="add-task">
+  <input id="new-task" type="text" placeholder="New task (ex: Submit Rutgers app)">
+  <input id="new-date" type="date">
+  <button onclick="addTask()">Add Task</button>
+</div>
   </div>
 
+  <ul id="checklist"></ul>
+
+  <h3>Add Your Own Deadline</h3>
+  <input id="new-task" placeholder="Task name">
+  <input id="new-date" type="date">
+  <button onclick="addTask()">Add</button>
+</div>
   <script src="check-list.js"></script>
 </body>
 </html>
