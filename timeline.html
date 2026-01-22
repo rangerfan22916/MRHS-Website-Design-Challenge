@@ -1,32 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>College Planning Timeline</title>
-  <link rel="stylesheet" href="timeline.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Junior & Senior Timeline</title>
+<link rel="stylesheet" href="timeline.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-<div class="navbar">
-  <div class="logo">MRHS College Guide</div>
-</div>
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="container-lg">
+        <a class="navbar-brand" href="#">
+            <div class="logo-container">
+                <i class="fas fa-calendar-check logo-icon"></i>
+            </div>
+            <span class="brand-text">SchoolPlanner</span>
+        </a>
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#timeline">Timeline</a></li>
+            <li class="nav-item"><a class="nav-link" href="#checklist">Checklist</a></li>
+            <li class="nav-item"><a class="nav-link" href="#terms">Terms</a></li>
+        </ul>
+    </div>
+</nav>
 
-<section class="timeline-header">
-  <h1>College Planning Timeline</h1>
-  <p>A step-by-step guide from junior year through senior year.</p>
-  <div id="countdown"></div>
+<!-- HERO -->
+<section class="hero-section">
+    <div class="hero-content text-center">
+        <h1 class="hero-title">Stay On Track</h1>
+        <p class="hero-subtitle">Manage your junior and senior year deadlines efficiently</p>
+        <button class="cta-button">Get Started</button>
+    </div>
 </section>
 
-<div class="filters">
-  <button class="active" data-filter="all">All</button>
-  <button data-filter="junior">Junior Year</button>
-  <button data-filter="senior">Senior Year</button>
-</div>
+<!-- ABOUT -->
+<section id="about" class="about-section">
+    <h2 class="section-title">About</h2>
+    <p class="section-text">This planner helps students organize important deadlines, checklists, and tasks for junior and senior year.</p>
+</section>
 
-<section class="timeline" id="timeline"></section>
+<!-- TIMELINE -->
+<section id="timeline" class="timeline-section">
+    <div class="container-lg">
+        <h2 class="section-title">Timeline</h2>
+        <p class="section-text">Key milestones and deadlines for your junior and senior year.</p>
+
+        <!-- Tabs -->
+        <div class="page-nav">
+            <button class="tab-button active" data-target="junior">Junior Year</button>
+            <button class="tab-button" data-target="senior">Senior Year</button>
+        </div>
+
+        <!-- Timeline Container -->
+        <div id="timeline-content"></div>
+    </div>
+</section>
+
+<!-- CHECKLIST -->
+<section id="checklist" class="checklist-section">
+    <div class="container-lg">
+        <h2 class="section-title">Checklist</h2>
+        <div class="checklist-container" id="checklist-content"></div>
+    </div>
+</section>
+
+<!-- TERMS -->
+<section id="terms" class="terms-section">
+    <div class="container-lg">
+        <h2 class="section-title">Terms</h2>
+        <div class="terms-grid" id="terms-content"></div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    &copy; 2026 School Planner. All Rights Reserved.
+</footer>
 
 <script src="timeline.js"></script>
 </body>
-
 </html>
