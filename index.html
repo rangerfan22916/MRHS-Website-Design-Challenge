@@ -1,42 +1,121 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Title</title>
-        <!-- Required meta tags -->
+        <title>College Compass</title>
         <meta charset="utf-8" />
         <meta
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-
-        <!-- Bootstrap CSS v5.2.1 -->
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
             rel="stylesheet"
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
         />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+        <link rel="stylesheet" href="style.css" />
     </head>
 
     <body>
         <header>
-            <!-- place navbar here -->
+            <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+                <div class="container-lg">
+                    <a class="navbar-brand" href="#home">
+                        <div class="logo-container">
+                            <i class="fas fa-graduation-cap logo-icon"></i>
+                        </div>
+                        <span class="brand-text">College Guide</span>
+                    </a>
+                   
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#timeline">Timeline</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#checklist">Checklist</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#terms">Terms</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         </header>
-        <main></main>
-        <footer>
-            <!-- place footer here -->
+
+        <main>
+            <!-- Hero Section -->
+            <section id="home" class="hero-section">
+                <div class="container-lg h-100">
+                    <div class="row align-items-center h-100">
+                        <div class="col-lg-8 mx-auto text-center">
+                            <h1 class="hero-title">Your College Journey Starts Here</h1>
+                            <p class="hero-subtitle">
+                                Timeline guides, application strategies, and support every step of the way.
+                            </p>
+                            <a href="#about" class="cta-button">Explore Now</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="about-section">
+                <div class="container-lg">
+                    <h2 class="section-title">About Us and Our Mission</h2>
+                    <div class="about-content">
+                        <div class="about-intro">
+                            <p class="about-main-text">
+                                We make the college process simple. From timelines and checklists to real advice, College Compass helps juniors and seniors navigate every step with confidence.
+                            </p>
+                        </div>
+                        <div class="about-features">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </div>
+                                <h4>Structured Timeline</h4>
+                                <p>Clear, step-by-step guidance from junior year through senior year to keep you on track.</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-clipboard-check"></i>
+                                </div>
+                                <h4>Interactive Checklist</h4>
+                                <p>Keep track of important tasks and deadlines with our comprehensive college application checklist.</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-book-open"></i>
+                                </div>
+                                <h4>Essential Terms</h4>
+                                <p>Master college admissions terminology and acronyms to navigate the process with confidence.</p>
+                            </div>
+                        </div>
+                        <div class="about-mission">
+                            <h3>Our Mission</h3>
+                            <p>
+                                Empower students with clear, actionable guidance to make informed decisions about their college future. We believe every student deserves access to comprehensive resources and support to navigate the college application journey successfully.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container-lg text-center">
+                <p>&copy; 2026 College Compass. All rights reserved.</p>
+            </div>
         </footer>
-        <!-- Bootstrap JavaScript Libraries -->
+
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
             integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
             crossorigin="anonymous"
         ></script>
-
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
             crossorigin="anonymous"
         ></script>
+        <script src="script.js"></script>
     </body>
 </html>
