@@ -1,0 +1,221 @@
+/* Terms Page Specific Styles */
+.terms-hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(0, 217, 255, 0.1);
+    padding: 60px 40px;
+}
+
+.terms-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0, 217, 255, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.terms-hero-content {
+    max-width: 800px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.terms-hero h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.terms-hero p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+}
+
+.terms-section {
+    padding: 80px 40px;
+    border-bottom: 1px solid rgba(0, 217, 255, 0.1);
+}
+
+.terms-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.term-card {
+    background: rgba(30, 41, 59, 0.6);
+    border: 1px solid rgba(0, 217, 255, 0.2);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.term-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+    transition: left 0.4s ease;
+}
+
+.term-card:hover {
+    background: rgba(30, 41, 59, 0.9);
+    border-color: rgba(0, 217, 255, 0.5);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 217, 255, 0.2);
+}
+
+.term-card:hover::before {
+    left: 0;
+}
+
+.term-card h3 {
+    font-size: 1.3rem;
+    color: var(--accent);
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+}
+
+.term-card .term-acronym {
+    display: inline-block;
+    background: rgba(0, 217, 255, 0.1);
+    color: var(--accent);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+}
+
+.term-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.category-header {
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(255, 0, 110, 0.05));
+    border-left: 4px solid var(--accent);
+    padding: 1.5rem 2rem;
+    margin: 3rem 0 2rem 0;
+    border-radius: 8px;
+}
+
+.category-header h2 {
+    font-size: 1.8rem;
+    color: var(--accent);
+    margin: 0;
+    font-weight: 700;
+}
+
+.search-box {
+    margin: 2rem 0;
+    position: relative;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px 20px 12px 40px;
+    background: rgba(30, 41, 59, 0.6);
+    border: 1px solid rgba(0, 217, 255, 0.3);
+    border-radius: 8px;
+    color: var(--text-light);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+    outline: none;
+    background: rgba(30, 41, 59, 0.8);
+    border-color: var(--accent);
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.2);
+}
+
+.search-box input::placeholder {
+    color: var(--text-muted);
+}
+
+.search-box i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent);
+}
+
+.related-terms {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.related-term {
+    display: inline-block;
+    background: rgba(0, 217, 255, 0.1);
+    color: var(--accent);
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.related-term:hover {
+    background: rgba(0, 217, 255, 0.2);
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .terms-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .terms-hero h1 {
+        font-size: 2rem;
+    }
+
+    .terms-hero {
+        padding: 40px 20px;
+    }
+
+    .terms-section {
+        padding: 40px 20px;
+    }
+}
