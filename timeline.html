@@ -1,89 +1,174 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Junior & Senior Timeline</title>
+    <title>College Guide | Timeline</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-<link rel="stylesheet" href="timeline.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container-lg">
+            <a class="navbar-brand" href="index.html">
+                <div class="logo-container">
+                    <i class="fas fa-graduation-cap logo-icon"></i>
+                </div>
+                <span class="brand-text">College Guide</span>
+            </a>
 
-<!-- NAVBAR -->
-<nav class="navbar">
-    <div class="container-lg">
-        <a class="navbar-brand" href="index.html">
-            <div class="logo-container">
-                <i class="fas fa-calendar-check logo-icon"></i>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="timeline.html">Timeline</a></li>
+                    <li class="nav-item"><a class="nav-link" href="check-list.html">Checklist</a></li>
+                    <li class="nav-item"><a class="nav-link" href="terms.html">Terms</a></li>
+                </ul>
             </div>
-            <span class="brand-text">SchoolPlanner</span>
-        </a>
-
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="timeline.html">Timeline</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="check-list.html">Checklist</a>
-            </li>
-        </ul>
-    </div>
-</nav>
-
-
-<!-- HERO -->
-<section class="hero-section">
-    <div class="hero-content text-center">
-        <h1 class="hero-title">Academic Timeline</h1>
-        <p class="hero-subtitle">
-            A clear roadmap for your junior and senior year
-        </p>
-        <button class="cta-button" onclick="scrollToTimeline()">
-            View Timeline
-        </button>
-    </div>
-</section>
-
-<!-- TIMELINE -->
-<section id="timeline" class="timeline-section">
-    <div class="container-lg">
-        <h2 class="section-title">Junior & Senior Year Planner</h2>
-        <p class="section-text">
-            Stay organized with key milestones and important deadlines.
-        </p>
-
-        <!-- Tabs -->
-        <div class="page-nav">
-            <button class="tab-button active" data-target="junior">
-                Junior Year
-            </button>
-            <button class="tab-button" data-target="senior">
-                Senior Year
-            </button>
         </div>
+    </nav>
+</header>
 
-        <!-- Timeline content loaded from JSON -->
-        <div id="timeline-content"></div>
-    </div>
-</section>
+<main>
+    <!-- PAGE HEADER -->
+    <section class="hero-section" style="min-height: 50vh;">
+        <div class="container-lg text-center">
+            <h1 class="hero-title">College Application Timeline</h1>
+            <p class="hero-subtitle">
+                A step-by-step guide from junior year to senior year graduation.
+            </p>
+        </div>
+    </section>
 
-<!-- FOOTER -->
+    <!-- TIMELINE -->
+    <section class="timeline-section">
+        <div class="timeline-container">
+
+            <!-- JUNIOR YEAR EVENTS -->
+
+            <!-- Event 1: Junior Year Fall -->
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <div class="timeline-content">
+                    <h3>Junior Fall</h3>
+                    <p>Start preparing for the SAT/ACT and research colleges you're interested in.</p>
+                    <ul>
+                        <li>Begin researching colleges: location, programs, and campus size.</li>
+                        <li>Take practice SAT/ACT tests to assess strengths and weaknesses.</li>
+                        <li>Attend college fairs and virtual information sessions.</li>
+                        <li>Maintain strong grades and participate in extracurriculars.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Event 2: Junior Year Winter -->
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <i class="fas fa-pencil-alt"></i>
+                </div>
+                <div class="timeline-content">
+                    <h3>Junior Winter</h3>
+                    <p>Take the PSAT and begin brainstorming essay topics.</p>
+                    <ul>
+                        <li>Take the PSAT for National Merit consideration.</li>
+                        <li>Meet with your counselor to review college goals.</li>
+                        <li>Brainstorm and outline potential college essay topics.</li>
+                        <li>Seek leadership opportunities in extracurriculars.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Event 3: Junior Year Spring -->
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <div class="timeline-content">
+                    <h3>Junior Spring</h3>
+                    <p>Take AP/IB exams and finalize your college list.</p>
+                    <ul>
+                        <li>Take AP/IB exams to strengthen academic profile.</li>
+                        <li>Finalize preliminary college list and identify target schools.</li>
+                        <li>Visit campuses if possible.</li>
+                        <li>Consider summer programs, internships, or volunteering for experience.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SENIOR YEAR EVENTS -->
+
+            <!-- Event 4: Senior Year Fall -->
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="timeline-content">
+                    <h3>Senior Fall</h3>
+                    <p>Submit college applications and request recommendation letters.</p>
+                    <ul>
+                        <li>Complete and submit college applications before deadlines.</li>
+                        <li>Refine essays and supplemental materials.</li>
+                        <li>Request letters of recommendation from teachers.</li>
+                        <li>Maintain strong grades; colleges review senior year performance.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Event 5: Senior Year Winter -->
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <i class="fas fa-file-signature"></i>
+                </div>
+                <div class="timeline-content">
+                    <h3>Senior Winter</h3>
+                    <p>Apply for financial aid and scholarships.</p>
+                    <ul>
+                        <li>Submit FAFSA and/or CSS Profile.</li>
+                        <li>Apply for scholarships and grants.</li>
+                        <li>Check college portals for missing materials.</li>
+                        <li>Plan campus visits if needed for final decision-making.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Event 6: Senior Year Spring -->
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="timeline-content">
+                    <h3>Senior Spring</h3>
+                    <p>Decide on your college, submit your deposit, and prepare for graduation!</p>
+                    <ul>
+                        <li>Review acceptance letters and compare financial aid offers.</li>
+                        <li>Choose your college and submit the enrollment deposit.</li>
+                        <li>Confirm housing and orientation dates.</li>
+                        <li>Celebrate graduation and prepare academically and personally for college.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>
+
 <footer class="footer">
-    &copy; 2026 School Planner. All Rights Reserved.
+    <div class="container-lg text-center">
+        <p>&copy; 2026 College Compass. All rights reserved.</p>
+    </div>
 </footer>
 
-<script src="timeline.js"></script>
-
-<script>
-function scrollToTimeline() {
-    document.getElementById("timeline")
-        .scrollIntoView({ behavior: "smooth" });
-}
-</script>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
