@@ -1,63 +1,81 @@
-// ===== TASK STORAGE =====
+// ================================
+// TASK DATA
+// ================================
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [
-  { text: "Create Common App account", date: "2025-08-01", done: false },
-  { text: "Build college list", date: "2025-09-01", done: false },
-  { text: "Request teacher recommendations", date: "2025-09-15", done: false },
-  { text: "Take / retake SAT or ACT", date: "2025-10-01", done: false },
-  { text: "Complete FAFSA", date: "2025-10-01", done: false },
-  { text: "Submit Early Action / Early Decision", date: "2025-11-01", done: false },
-  { text: "Submit Regular Decision applications", date: "2026-01-01", done: false },
-  { text: "Commit to a college 🎉", date: "2026-05-01", done: false }
+  { text: "Create Common App account", date: "2025-08-01", done: false, userAdded: false },
+  { text: "Build college list", date: "2025-09-01", done: false, userAdded: false },
+  { text: "Request teacher recommendations", date: "2025-09-15", done: false, userAdded: false },
+  { text: "Take / retake SAT or ACT", date: "2025-10-01", done: false, userAdded: false },
+  { text: "Complete FAFSA", date: "2025-10-01", done: false, userAdded: false },
+  { text: "Submit Early Action / Early Decision", date: "2025-11-01", done: false, userAdded: false },
+  { text: "Submit Regular Decision applications", date: "2026-01-01", done: false, userAdded: false },
+  { text: "Commit to a college 🎉", date: "2026-05-01", done: false, userAdded: false }
 ];
 
 let filter = "all";
-const checklist = document.getElementById("checklist");
 
-// ===== SAVE TO LOCALSTORAGE =====
+const checklist = document.getElementById("taskList");
+const progressBar = document.getElementById("progressBar");
+const progressText = document.getElementById("progressText");
+const autoSort = document.getElementById("autoSortToggle");
+
+// ================================
+// SAVE TASKS TO LOCALSTORAGE
+// ================================
 function save() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
-// ===== LOAD CHECKLIST =====
+// ================================
+// LOAD CHECKLIST
+// ================================
 function loadChecklist() {
   checklist.innerHTML = "";
   const today = new Date();
 
-  // Filter tasks
   let displayTasks = [...tasks];
-  if (filter === "overdue") {
-    displayTasks = displayTasks.filter(t => new Date(t.date) < today && !t.done);
-  }
-  if (filter === "completed") {
-    displayTasks = displayTasks.filter(t => t.done);
-  }
 
-  // Sort by date
-  displayTasks.sort((a, b) => new Date(a.date) - new Date(b.date));
+  // Apply filter
+  if (filter === "overdue") displayTasks = displayTasks.filter(t => new Date(t.date) < today && !t.done);
+  if (filter === "completed") displayTasks = displayTasks.filter(t => t.done);
 
-  // Render tasks
+  // Auto-sort
+  if (autoSort.checked) displayTasks.sort((a,b) => new Date(a.date) - new Date(b.date));
+
   displayTasks.forEach(task => {
-    const overdue = new Date(task.date) < today && !task.done;
-
     const li = document.createElement("li");
-    li.classList.add("checklist-item");
-    if (task.done) li.classList.add("completed");
-    if (overdue) li.classList.add("overdue");
+    const taskDate = new Date(task.date);
+    const diffDays = Math.ceil((taskDate - today) / (1000*60*60*24));
 
+    // Add classes for styling
+    if (task.done) li.classList.add("completed");
+    else if (taskDate < today) li.classList.add("overdue");
+    else if (diffDays <= 7) li.classList.add("due-soon");
+
+    // Show delete button only for user-added tasks
     li.innerHTML = `
-      <input type="checkbox" class="checklist-input" ${task.done ? "checked" : ""}>
-      <label>
-        <span>${task.text}</span>
-        <span class="deadline ${overdue ? "overdue" : ""}">Due: ${new Date(task.date).toLocaleDateString()}</span>
-      </label>
+      <input type="checkbox" ${task.done ? "checked" : ""}>
+      <span>${task.text} — Due: ${taskDate.toLocaleDateString()}</span>
+      ${task.userAdded ? '<button class="delete-btn">🗑️</button>' : ''}
     `;
 
-    // Checkbox listener
+    // Checkbox toggle
     li.querySelector("input").addEventListener("change", () => {
       task.done = !task.done;
       save();
       loadChecklist();
+      updateProgress();
     });
+
+    // Delete button
+    if (task.userAdded) {
+      li.querySelector(".delete-btn").addEventListener("click", () => {
+        tasks = tasks.filter(t => t !== task);
+        save();
+        loadChecklist();
+        updateProgress();
+      });
+    }
 
     checklist.appendChild(li);
   });
@@ -65,38 +83,51 @@ function loadChecklist() {
   updateProgress();
 }
 
-// ===== UPDATE PROGRESS BAR =====
+// ================================
+// PROGRESS BAR
+// ================================
 function updateProgress() {
   const completed = tasks.filter(t => t.done).length;
   const percent = tasks.length === 0 ? 0 : Math.round((completed / tasks.length) * 100);
-  
-  const bar = document.getElementById("progress-bar");
-  const text = document.getElementById("progress-text");
-
-  if (bar) bar.style.width = percent + "%";
-  if (text) text.textContent = `${percent}% completed`;
+  progressBar.style.width = percent + "%";
+  progressText.textContent = percent + "% completed";
 }
 
-// ===== FILTER =====
+// ================================
+// FILTER
+// ================================
 function setFilter(type) {
   filter = type;
   loadChecklist();
 }
 
-// ===== ADD TASK =====
+// ================================
+// ADD TASK
+// ================================
 function addTask() {
-  const text = document.getElementById("new-task").value.trim();
-  const date = document.getElementById("new-date").value;
+  const text = document.getElementById("taskInput").value.trim();
+  const date = document.getElementById("dateInput").value;
+  if (!text || !date) return;
 
-  if (!text || !date) return alert("Please enter both task and date!");
-
-  tasks.push({ text, date, done: false });
+  // Add task as userAdded
+  tasks.push({ text, date, done: false, userAdded: true });
   save();
   loadChecklist();
 
-  document.getElementById("new-task").value = "";
-  document.getElementById("new-date").value = "";
+  // Clear inputs
+  document.getElementById("taskInput").value = "";
+  document.getElementById("dateInput").value = "";
 }
 
-// ===== INIT =====
+// ================================
+// EXPORT PDF
+// ================================
+function exportPDF() {
+  const element = document.querySelector(".checklist-card");
+  html2pdf().set({ margin:0.5, filename:'Checklist.pdf', html2canvas:{scale:2} }).from(element).save();
+}
+
+// ================================
+// INITIALIZE
+// ================================
 loadChecklist();
