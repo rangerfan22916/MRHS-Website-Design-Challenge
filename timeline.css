@@ -180,4 +180,10 @@ body {
 @media(max-width:768px){
     .navbar-nav { flex-direction: column; gap: 10px; margin-top: 10px; }
     .timeline-item { flex-direction: column; gap: 15px; }
+    .nav-link.active {
+    color: var(--accent) !important;
+    background: rgba(0,217,255,0.15);
+    border-color: rgba(0,217,255,0.6);
+}
+
 }
