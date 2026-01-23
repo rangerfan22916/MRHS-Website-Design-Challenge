@@ -1,141 +1,214 @@
-/* ===== MAIN CONTAINER ===== */
-.container {
-    background-color: #0f172a; /* slate-900 */
-    border: 1px solid #1e293b; /* slate-800 */
-    border-radius: 16px;
-    padding: 32px;
-    color: #e5e7eb;
+/* ================================
+   CHECKLIST STYLES
+================================ */
+
+.checklist-card {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 32px;
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
-/* ===== HEADINGS ===== */
-.container h1 {
-    color: #38bdf8; /* soft cyan */
-    font-weight: 700;
+.checklist-card h1 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 6px;
+  background: linear-gradient(135deg, #00D9FF, #FF006E);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.container p {
-    color: #cbd5f5;
+.checklist-card p.subtitle {
+  text-align: center;
+  color: #A0AEC0;
+  margin-bottom: 28px;
 }
 
-/* ===== ADD TASK BAR ===== */
+/* Progress Bar */
+.progress-shell {
+  width: 100%;
+  height: 22px;
+  background: #020617;
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #22c55e, #4ade80);
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.progress-text {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #A0AEC0;
+  margin-bottom: 26px;
+}
+
+/* Filters */
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 18px;
+  align-items: center;
+}
+
+.filter-buttons button, .filter-buttons label {
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid rgba(0,217,255,0.35);
+  background: rgba(0,217,255,0.12);
+  color: #E0E7FF;
+  transition: all 0.25s ease;
+}
+
+.filter-buttons button:hover, .filter-buttons label:hover {
+  background: rgba(0,217,255,0.25);
+  transform: translateY(-2px);
+}
+
+.filter-buttons input[type="checkbox"] {
+  margin-right: 6px;
+}
+
+/* Add Task */
 .add-task {
-    display: flex;
-    gap: 14px;
-    margin-bottom: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 22px;
 }
 
 .add-task input {
-    flex: 1;
-    padding: 14px 16px;
-    font-size: 1rem;
-    background-color: #020617; /* deep navy */
-    border: 2px solid #334155;
-    border-radius: 12px;
-    color: #f8fafc;
-}
-
-.add-task input::placeholder {
-    color: #94a3b8;
+  flex: 1;
+  padding: 12px 14px;
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  border-radius: 10px;
+  color: #E0E7FF;
 }
 
 .add-task input:focus {
-    outline: none;
-    border-color: #38bdf8;
+  outline: none;
+  border-color: #00D9FF;
 }
 
-/* BIG FRIENDLY BUTTON */
 .add-task button {
-    padding: 14px 26px;
-    font-size: 1rem;
-    border-radius: 12px;
-    border: none;
-    background-color: #38bdf8;
-    color: #020617;
-    font-weight: 700;
-    cursor: pointer;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #00D9FF, #FF006E);
+  border: none;
+  border-radius: 10px;
+  color: #0F172A;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
 
 .add-task button:hover {
-    background-color: #7dd3fc;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 217, 255, 0.35);
 }
 
-/* ===== FILTER BUTTONS ===== */
-button {
-    padding: 12px 22px;
-    font-size: 0.95rem;
-    border-radius: 10px;
-    border: 2px solid #334155;
-    background-color: #020617;
-    color: #e5e7eb;
-    margin-right: 10px;
+/* Export Button */
+.export-btn {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #00D9FF, #FF006E);
+  color: #0F172A;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 16px;
 }
 
-button:hover {
-    background-color: #1e293b;
+.export-btn:hover {
+  box-shadow: 0 10px 25px rgba(0, 217, 255, 0.35);
+  transform: translateY(-2px);
 }
 
-/* ===== PROGRESS BAR ===== */
-progress {
-    width: 100%;
-    height: 18px;
+/* Task List */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-progress::-webkit-progress-bar {
-    background-color: #020617;
-    border-radius: 12px;
+.task-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 16px 18px;
+  background: rgba(30, 41, 59, 0.65);
+  border: 1px solid rgba(0, 217, 255, 0.25);
+  border-radius: 12px;
+  margin-bottom: 12px;
+  transition: all 0.25s ease;
 }
 
-progress::-webkit-progress-value {
-    background-color: #38bdf8;
-    border-radius: 12px;
+.task-list li:hover {
+  background: rgba(30, 41, 59, 0.9);
+  border-color: rgba(0, 217, 255, 0.5);
 }
 
-/* ===== CHECKLIST ===== */
-ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 24px;
+.task-list input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  accent-color: #22c55e;
+  cursor: pointer;
 }
 
-li {
-    background-color: #020617;
-    border: 2px solid #1e293b;
-    border-radius: 14px;
-    padding: 18px;
-    margin-bottom: 14px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
+.task-list li.completed {
+  opacity: 0.6;
+  text-decoration: line-through;
 }
 
-/* Checkbox */
-input[type="checkbox"] {
-    width: 22px;
-    height: 22px;
+.task-list li.overdue {
+  border-left: 6px solid #f87171; /* red */
 }
 
-/* Completed task */
-input[type="checkbox"]:checked + strong {
-    text-decoration: line-through;
-    opacity: 0.6;
+.task-list li.due-soon {
+  border-left: 6px solid #facc15; /* yellow */
 }
 
-/* Overdue task */
-li.overdue {
-    border-left: 6px solid #ef4444;
+/* Delete Button */
+.task-list .delete-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #f87171;
+  transition: transform 0.2s ease;
 }
-.container {
-    max-width: 900px;      /* keeps it readable */
-    margin: 60px auto;     /* space top/bottom + auto left/right */
-    padding: 32px 36px;    /* inner spacing */
-    background-color: #0f172a;
-    border: 1px solid #1e293b;
-    border-radius: 16px;
-    color: #e5e7eb;
+
+.task-list .delete-btn:hover {
+  transform: scale(1.2);
 }
-@media (max-width: 768px) {
-    .container {
-        margin: 24px 16px;
-        padding: 24px;
-    }
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .add-task {
+    flex-direction: column;
+  }
+  .filter-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .task-list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .task-list .delete-btn {
+    align-self: flex-end;
+  }
 }
