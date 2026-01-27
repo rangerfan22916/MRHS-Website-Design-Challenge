@@ -49,13 +49,13 @@
 
 /* ===== CHECKLIST SECTION ===== */
 .checklist-section {
-    padding: 80px 0;
+    padding: 100px 40px;
     background: linear-gradient(135deg, rgba(158, 79, 20, 0.03) 0%, rgba(255, 0, 110, 0.03) 100%);
     border-bottom: 1px solid rgba(158, 79, 20, 0.1);
 }
 
 .checklist-container {
-    padding: 40px 0;
+    padding: 60px 40px;
 }
 
 .filter-buttons {
