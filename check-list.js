@@ -89,6 +89,29 @@ function loadChecklist() {
 function updateProgress() {
   const completed = tasks.filter(t => t.done).length;
   const percent = tasks.length === 0 ? 0 : Math.round((completed / tasks.length) * 100);
+  
+  const bar = document.getElementById("progress-bar");
+  const text = document.getElementById("progress-text");
+
+  if (bar) {
+    bar.style.width = percent + "%";
+    
+    // Remove all progress classes
+    bar.classList.remove("progress-25", "progress-50", "progress-75", "progress-100");
+    
+    // Add appropriate class based on percentage
+    if (percent > 0 && percent <= 25) {
+      bar.classList.add("progress-25");
+    } else if (percent > 25 && percent <= 50) {
+      bar.classList.add("progress-50");
+    } else if (percent > 50 && percent <= 75) {
+      bar.classList.add("progress-75");
+    } else if (percent === 100) {
+      bar.classList.add("progress-100");
+    }
+  }
+  
+  if (text) text.textContent = `${percent}% completed`;
   progressBar.style.width = percent + "%";
   progressText.textContent = percent + "% completed";
 }

@@ -1,6 +1,263 @@
+/* ===== CHECKLIST HERO SECTION ===== */
+.checklist-hero {
+    background: linear-gradient(135deg, rgba(111, 84, 35, 0.8), rgba(255, 255, 255, 0.3)), url('imgs/checklist.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(158, 79, 20, 0.3);
+}
+
+.checklist-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(212, 165, 116, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.checklist-hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.checklist-hero-content h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: #FFFFFF;
+    text-shadow: 0 2px 10px rgba(158, 79, 20, 0.3);
+    animation: fadeInDown 0.8s ease;
+}
+
+.checklist-hero-content p {
+    font-size: 1.1rem;
+    color: #FFFFFF;
+    animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+/* ===== CHECKLIST SECTION ===== */
+.checklist-section {
+    padding: 100px 40px;
+    background: linear-gradient(135deg, rgba(158, 79, 20, 0.03) 0%, rgba(255, 0, 110, 0.03) 100%);
+    border-bottom: 1px solid rgba(158, 79, 20, 0.1);
+}
+
+.checklist-container {
+    padding: 60px 40px;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    background: rgba(158, 79, 20, 0.1);
+    border: 1px solid rgba(158, 79, 20, 0.3);
+    border-radius: 8px;
+    color: var(--text-light);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background: rgba(158, 79, 20, 0.2);
+    border-color: rgba(158, 79, 20, 0.6);
+    color: var(--accent);
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    border-color: var(--accent);
+    color: var(--primary);
+}
+
+/* ===== ADD TASK BAR ===== */
+.add-task {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+}
+
+.add-task input {
+    flex: 1;
+    min-width: 150px;
+    padding: 14px 16px;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(158, 79, 20, 0.2);
+    border-radius: 8px;
+    color: var(--text-light);
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.add-task input::placeholder {
+    color: var(--text-muted);
+}
+
+.add-task input:focus {
+    outline: none;
+    border-color: var(--accent);
+    background-color: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(158, 79, 20, 0.1);
+}
+
+/* ===== ADD BUTTON ===== */
+.add-btn {
+    padding: 14px 28px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    color: var(--primary);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.add-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px rgba(158, 79, 20, 0.3);
+}
+
+/* ===== PROGRESS BAR ===== */
+.progress-container {
+    width: 100%;
+    height: 16px;
+    background-color: rgba(158, 79, 20, 0.15);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #9E4F14, #D4A574);
+    border-radius: 8px;
+    transition: width 0.4s ease, background 0.6s ease;
+    box-shadow: 0 0 10px rgba(158, 79, 20, 0.4);
+}
+
+/* Progress bar color changes as you complete tasks */
+.progress-bar.progress-25 {
+    background: linear-gradient(90deg, #9E4F14, #D4A574);
+}
+
+.progress-bar.progress-50 {
+    background: linear-gradient(90deg, #E8B44F, #FFD700);
+}
+
+.progress-bar.progress-75 {
+    background: linear-gradient(90deg, #7CB342, #9CCC65);
+}
+
+.progress-bar.progress-100 {
+    background: linear-gradient(90deg, #4CAF50, #66BB6A);
+    box-shadow: 0 0 15px rgba(76, 175, 80, 0.6);
+}
+
+#progress-text {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* ===== CHECKLIST ===== */
+#checklist {
+    list-style: none;
+    padding: 0;
+    margin-top: 24px;
+}
+
+#checklist li {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(158, 79, 20, 0.2);
+    border-radius: 8px;
+    padding: 18px;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: all 0.3s ease;
+}
+
+#checklist li:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-color: rgba(158, 79, 20, 0.4);
+    box-shadow: 0 4px 12px rgba(158, 79, 20, 0.1);
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    accent-color: var(--accent);
+}
+
+/* Completed task */
+input[type="checkbox"]:checked + strong {
+    text-decoration: line-through;
+    opacity: 0.6;
+    color: var(--text-muted);
+}
+
+#checklist strong {
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+/* Overdue task */
+#checklist li.overdue {
+    border-left: 4px solid #DC2626;
+    background-color: rgba(220, 38, 38, 0.08);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .checklist-hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .checklist-hero-content p {
+        font-size: 1rem;
+    }
+
+    .add-task {
+        flex-direction: column;
+    }
+
+    .add-task input,
+    .add-btn {
+        width: 100%;
+    }
+
+    .filter-buttons {
+        justify-content: flex-start;
+    }
 /* ================================
    CHECKLIST STYLES
-================================ */
 
 .checklist-card {
   max-width: 900px;
