@@ -256,4 +256,216 @@ input[type="checkbox"]:checked + strong {
     .filter-buttons {
         justify-content: flex-start;
     }
+/* ================================
+   CHECKLIST STYLES
+
+.checklist-card {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 32px;
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.checklist-card h1 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 6px;
+  background: linear-gradient(135deg, #00D9FF, #FF006E);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.checklist-card p.subtitle {
+  text-align: center;
+  color: #A0AEC0;
+  margin-bottom: 28px;
+}
+
+/* Progress Bar */
+.progress-shell {
+  width: 100%;
+  height: 22px;
+  background: #020617;
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #22c55e, #4ade80);
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.progress-text {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #A0AEC0;
+  margin-bottom: 26px;
+}
+
+/* Filters */
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 18px;
+  align-items: center;
+}
+
+.filter-buttons button, .filter-buttons label {
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid rgba(0,217,255,0.35);
+  background: rgba(0,217,255,0.12);
+  color: #E0E7FF;
+  transition: all 0.25s ease;
+}
+
+.filter-buttons button:hover, .filter-buttons label:hover {
+  background: rgba(0,217,255,0.25);
+  transform: translateY(-2px);
+}
+
+.filter-buttons input[type="checkbox"] {
+  margin-right: 6px;
+}
+
+/* Add Task */
+.add-task {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.add-task input {
+  flex: 1;
+  padding: 12px 14px;
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  border-radius: 10px;
+  color: #E0E7FF;
+}
+
+.add-task input:focus {
+  outline: none;
+  border-color: #00D9FF;
+}
+
+.add-task button {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #00D9FF, #FF006E);
+  border: none;
+  border-radius: 10px;
+  color: #0F172A;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.add-task button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 217, 255, 0.35);
+}
+
+/* Export Button */
+.export-btn {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #00D9FF, #FF006E);
+  color: #0F172A;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+
+.export-btn:hover {
+  box-shadow: 0 10px 25px rgba(0, 217, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Task List */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 16px 18px;
+  background: rgba(30, 41, 59, 0.65);
+  border: 1px solid rgba(0, 217, 255, 0.25);
+  border-radius: 12px;
+  margin-bottom: 12px;
+  transition: all 0.25s ease;
+}
+
+.task-list li:hover {
+  background: rgba(30, 41, 59, 0.9);
+  border-color: rgba(0, 217, 255, 0.5);
+}
+
+.task-list input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  accent-color: #22c55e;
+  cursor: pointer;
+}
+
+.task-list li.completed {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+.task-list li.overdue {
+  border-left: 6px solid #f87171; /* red */
+}
+
+.task-list li.due-soon {
+  border-left: 6px solid #facc15; /* yellow */
+}
+
+/* Delete Button */
+.task-list .delete-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #f87171;
+  transition: transform 0.2s ease;
+}
+
+.task-list .delete-btn:hover {
+  transform: scale(1.2);
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .add-task {
+    flex-direction: column;
+  }
+  .filter-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .task-list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .task-list .delete-btn {
+    align-self: flex-end;
+  }
 }
