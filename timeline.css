@@ -254,7 +254,7 @@ body {
     border-radius: 50%;
     pointer-events: none;
 }
-
+.hero-content {
     min-height: 80vh;
     display: flex;
     align-items: center;
