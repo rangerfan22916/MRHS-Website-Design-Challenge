@@ -1,10 +1,7 @@
 fetch("timeline.json")
     .then(res => res.json())
     .then(data => {
-        const timelineContainer = document.querySelector('.timeline-container');
-
-        // Clear existing content
-        timelineContainer.innerHTML = '';
+        const timelineContainer = document.getElementById('timeline-content');
 
         // Icon mapping for different task types
         const getIcon = (title) => {

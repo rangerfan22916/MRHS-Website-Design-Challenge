@@ -51,7 +51,7 @@
                 <p class="hero-subtitle">
                     A clear roadmap for your junior and senior year
                 </p>
-                <button class="cta-button" onclick="scrollToTimeline()">
+                <button class="cta-button" onclick="document.getElementById('timeline').scrollIntoView({behavior: 'smooth'})">
                     View Timeline
                 </button>
             </div>
@@ -76,142 +76,19 @@
                 Senior Year
             </button>
         </div>
-    </nav>
-</header>
 
-<main>
-    <!-- HERO SECTION -->
-    <section class="hero-section" style="min-height: 50vh;">
-        <div class="container-lg text-center">
-            <h1 class="hero-title">College Application Timeline</h1>
-            <p class="hero-subtitle">
-                A step-by-step guide from junior year to senior year graduation.
-            </p>
-        </div>
-    </section>
+        <!-- Timeline Content -->
+        <div id="timeline-content"></div>
+    </div>
+</section>
 
-    <!-- TIMELINE SECTION -->
-    <main>
-        <section class="timeline-section">
-            <div class="timeline-container">
+<footer class="footer">
+    <div class="container-lg text-center">
+        <p>&copy; 2026 College Guide. All rights reserved.</p>
+    </div>
+</footer>
 
-                <!-- JUNIOR YEAR EVENTS -->
-
-                <!-- Event 1: Junior Year Fall -->
-                <div class="timeline-item">
-                    <div class="timeline-marker">
-                        <i class="fas fa-book-open"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <h3>Junior Fall</h3>
-                        <p>Start preparing for the SAT/ACT and research colleges you're interested in.</p>
-                        <ul>
-                            <li>Begin researching colleges: location, programs, and campus size.</li>
-                            <li>Take practice SAT/ACT tests to assess strengths and weaknesses.</li>
-                            <li>Attend college fairs and virtual information sessions.</li>
-                            <li>Maintain strong grades and participate in extracurriculars.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Event 2: Junior Year Winter -->
-                <div class="timeline-item">
-                    <div class="timeline-marker">
-                        <i class="fas fa-pencil-alt"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <h3>Junior Winter</h3>
-                        <p>Take the PSAT and begin brainstorming essay topics.</p>
-                        <ul>
-                            <li>Take the PSAT for National Merit consideration.</li>
-                            <li>Meet with your counselor to review college goals.</li>
-                            <li>Brainstorm and outline potential college essay topics.</li>
-                            <li>Seek leadership opportunities in extracurriculars.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Event 3: Junior Year Spring -->
-                <div class="timeline-item">
-                    <div class="timeline-marker">
-                        <i class="fas fa-file-alt"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <h3>Junior Spring</h3>
-                        <p>Take AP/IB exams and finalize your college list.</p>
-                        <ul>
-                            <li>Take AP/IB exams to strengthen academic profile.</li>
-                            <li>Finalize preliminary college list and identify target schools.</li>
-                            <li>Visit campuses if possible.</li>
-                            <li>Consider summer programs, internships, or volunteering for experience.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- SENIOR YEAR EVENTS -->
-
-                <!-- Event 4: Senior Year Fall -->
-                <div class="timeline-item">
-                    <div class="timeline-marker">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <h3>Senior Fall</h3>
-                        <p>Submit college applications and request recommendation letters.</p>
-                        <ul>
-                            <li>Complete and submit college applications before deadlines.</li>
-                            <li>Refine essays and supplemental materials.</li>
-                            <li>Request letters of recommendation from teachers.</li>
-                            <li>Maintain strong grades; colleges review senior year performance.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Event 5: Senior Year Winter -->
-                <div class="timeline-item">
-                    <div class="timeline-marker">
-                        <i class="fas fa-file-signature"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <h3>Senior Winter</h3>
-                        <p>Apply for financial aid and scholarships.</p>
-                        <ul>
-                            <li>Submit FAFSA and/or CSS Profile.</li>
-                            <li>Apply for scholarships and grants.</li>
-                            <li>Check college portals for missing materials.</li>
-                            <li>Plan campus visits if needed for final decision-making.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Event 6: Senior Year Spring -->
-                <div class="timeline-item">
-                    <div class="timeline-marker">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <h3>Senior Spring</h3>
-                        <p>Decide on your college, submit your deposit, and prepare for graduation!</p>
-                        <ul>
-                            <li>Review acceptance letters and compare financial aid offers.</li>
-                            <li>Choose your college and submit the enrollment deposit.</li>
-                            <li>Confirm housing and orientation dates.</li>
-                            <li>Celebrate graduation and prepare academically and personally for college.</li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container-lg text-center">
-            <p>&copy; 2026 College Guide. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="timeline.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="timeline.js"></script>
 </body>
 </html>

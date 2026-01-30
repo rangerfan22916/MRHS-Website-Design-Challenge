@@ -2,22 +2,47 @@
 // TASK DATA
 // ================================
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [
-  { text: "Create Common App account", date: "2025-08-01", done: false, userAdded: false },
-  { text: "Build college list", date: "2025-09-01", done: false, userAdded: false },
-  { text: "Request teacher recommendations", date: "2025-09-15", done: false, userAdded: false },
-  { text: "Take / retake SAT or ACT", date: "2025-10-01", done: false, userAdded: false },
-  { text: "Complete FAFSA", date: "2025-10-01", done: false, userAdded: false },
-  { text: "Submit Early Action / Early Decision", date: "2025-11-01", done: false, userAdded: false },
-  { text: "Submit Regular Decision applications", date: "2026-01-01", done: false, userAdded: false },
-  { text: "Commit to a college 🎉", date: "2026-05-01", done: false, userAdded: false }
+  { text: "Meet with school counselor about graduation requirements", date: "2026-01-15", done: false, userAdded: false },
+  { text: "Discuss GPA, testing plans, and college goals with counselor", date: "2026-01-15", done: false, userAdded: false },
+  { text: "Create college interest list - research colleges", date: "2026-02-01", done: false, userAdded: false },
+  { text: "Research colleges by location, size, majors, and requirements", date: "2026-02-01", done: false, userAdded: false },
+  { text: "Begin SAT / ACT test preparation", date: "2026-03-01", done: false, userAdded: false },
+  { text: "Set up test prep resources (books, online tools, or tutoring)", date: "2026-03-01", done: false, userAdded: false },
+  { text: "Register for Spring SAT / ACT test date", date: "2026-04-01", done: false, userAdded: false },
+  { text: "Secure preferred test location and date", date: "2026-04-01", done: false, userAdded: false },
+  { text: "Take AP Exams", date: "2026-05-15", done: false, userAdded: false },
+  { text: "Request letters of recommendation from teachers", date: "2026-06-01", done: false, userAdded: false },
+  { text: "Ask teachers before summer break for recommendations", date: "2026-06-01", done: false, userAdded: false },
+  { text: "Visit colleges (virtual or in-person)", date: "2026-06-15", done: false, userAdded: false },
+  { text: "Explore campuses to refine college list", date: "2026-06-15", done: false, userAdded: false },
+  { text: "Create Common App account", date: "2026-07-01", done: false, userAdded: false },
+  { text: "Familiarize yourself with Common App sections and requirements", date: "2026-07-01", done: false, userAdded: false },
+  { text: "Start college essays - draft personal statements", date: "2026-08-01", done: false, userAdded: false },
+  { text: "Draft supplemental essays for colleges", date: "2026-08-01", done: false, userAdded: false },
+  { text: "Finalize college list before senior year", date: "2026-09-01", done: false, userAdded: false },
+  { text: "Confirm deadlines for each college on your list", date: "2026-09-01", done: false, userAdded: false },
+  { text: "FAFSA Opens - submit financial aid forms", date: "2026-10-01", done: false, userAdded: false },
+  { text: "Complete CSS Profile if required by colleges", date: "2026-10-01", done: false, userAdded: false },
+  { text: "Early Decision / Early Action application deadline", date: "2026-10-15", done: false, userAdded: false },
+  { text: "Submit early applications if applicable", date: "2026-10-15", done: false, userAdded: false },
+  { text: "Begin scholarship applications", date: "2026-11-01", done: false, userAdded: false },
+  { text: "Apply for local, state, and national scholarships", date: "2026-11-01", done: false, userAdded: false },
+  { text: "Confirm all recommendations submitted to colleges", date: "2026-12-01", done: false, userAdded: false },
+  { text: "Verify official transcripts have been sent to colleges", date: "2026-12-01", done: false, userAdded: false },
+  { text: "Regular Decision application deadline", date: "2027-01-01", done: false, userAdded: false },
+  { text: "Submit remaining college applications", date: "2027-01-01", done: false, userAdded: false },
+  { text: "Monitor college portals for admission decisions", date: "2027-03-15", done: false, userAdded: false },
+  { text: "Review acceptance letters and financial aid offers", date: "2027-03-15", done: false, userAdded: false },
+  { text: "Make final college decision", date: "2027-05-01", done: false, userAdded: false },
+  { text: "Submit enrollment deposit", date: "2027-05-01", done: false, userAdded: false },
+  { text: "Commit to a college 🎉", date: "2027-05-01", done: false, userAdded: false }
 ];
 
 let filter = "all";
 
-const checklist = document.getElementById("taskList");
-const progressBar = document.getElementById("progressBar");
-const progressText = document.getElementById("progressText");
-const autoSort = document.getElementById("autoSortToggle");
+const checklist = document.getElementById("checklist");
+const progressBar = document.getElementById("progress-bar");
+const progressText = document.getElementById("progress-text");
 
 // ================================
 // SAVE TASKS TO LOCALSTORAGE
@@ -39,8 +64,8 @@ function loadChecklist() {
   if (filter === "overdue") displayTasks = displayTasks.filter(t => new Date(t.date) < today && !t.done);
   if (filter === "completed") displayTasks = displayTasks.filter(t => t.done);
 
-  // Auto-sort
-  if (autoSort.checked) displayTasks.sort((a,b) => new Date(a.date) - new Date(b.date));
+  // Auto-sort by date
+  displayTasks.sort((a,b) => new Date(a.date) - new Date(b.date));
 
   displayTasks.forEach(task => {
     const li = document.createElement("li");
@@ -128,8 +153,8 @@ function setFilter(type) {
 // ADD TASK
 // ================================
 function addTask() {
-  const text = document.getElementById("taskInput").value.trim();
-  const date = document.getElementById("dateInput").value;
+  const text = document.getElementById("new-task").value.trim();
+  const date = document.getElementById("new-date").value;
   if (!text || !date) return;
 
   // Add task as userAdded
@@ -138,8 +163,8 @@ function addTask() {
   loadChecklist();
 
   // Clear inputs
-  document.getElementById("taskInput").value = "";
-  document.getElementById("dateInput").value = "";
+  document.getElementById("new-task").value = "";
+  document.getElementById("new-date").value = "";
 }
 
 // ================================
