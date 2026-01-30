@@ -454,6 +454,34 @@ body {
     box-shadow: 0 0 30px rgba(158, 79, 20, 0.6);
 }
 
+/* Unfilled marker style for full timeline */
+.timeline-marker.unfilled {
+    background: transparent;
+    border: 3px solid var(--accent);
+    color: var(--accent);
+    box-shadow: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.timeline-marker.unfilled:hover {
+    background: rgba(158, 79, 20, 0.1);
+    box-shadow: 0 0 20px rgba(158, 79, 20, 0.3);
+}
+
+/* Grade badge styling */
+.grade-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    background: rgba(158, 79, 20, 0.15);
+    border: 1px solid var(--accent);
+    border-radius: 20px;
+    color: var(--accent);
+    margin-top: 0.5rem;
+}
+
 .timeline-item:nth-child(odd) .timeline-content {
     width: calc(50% - 50px);
 }
