@@ -1,47 +1,50 @@
 fetch("timeline.json")
-.then(res => res.json())
-.then(data => {
-    const timelineContainer = document.getElementById('timeline-content');
+    .then(res => res.json())
+    .then(data => {
+        const timelineContainer = document.querySelector('.timeline-container');
 
-    // Icon mapping for different task types
-    const getIcon = (title) => {
-        const lowerTitle = title.toLowerCase();
-        
-        if (lowerTitle.includes('counselor')) return 'fa-users';
-        if (lowerTitle.includes('college interest') || lowerTitle.includes('research')) return 'fa-search';
-        if (lowerTitle.includes('sat') || lowerTitle.includes('act') || lowerTitle.includes('preparation')) return 'fa-pen';
-        if (lowerTitle.includes('register')) return 'fa-clipboard';
-        if (lowerTitle.includes('ap exam')) return 'fa-certificate';
-        if (lowerTitle.includes('letter') || lowerTitle.includes('recommendation')) return 'fa-envelope';
-        if (lowerTitle.includes('visit') || lowerTitle.includes('college')) return 'fa-map-pin';
-        if (lowerTitle.includes('common app') || lowerTitle.includes('account')) return 'fa-laptop';
-        if (lowerTitle.includes('essay')) return 'fa-pen-fancy';
-        if (lowerTitle.includes('financial') || lowerTitle.includes('fafsa') || lowerTitle.includes('css')) return 'fa-dollar-sign';
-        if (lowerTitle.includes('submit') || lowerTitle.includes('application')) return 'fa-paper-plane';
-        if (lowerTitle.includes('decision') || lowerTitle.includes('deposit')) return 'fa-check-circle';
-        if (lowerTitle.includes('interview')) return 'fa-handshake';
-        if (lowerTitle.includes('profile')) return 'fa-user';
-        if (lowerTitle.includes('transcript') || lowerTitle.includes('grade')) return 'fa-file-alt';
-        if (lowerTitle.includes('scholarship')) return 'fa-trophy';
-        
-        return 'fa-star'; // default icon
-    };
+        // Clear existing content
+        timelineContainer.innerHTML = '';
 
-    // Timeline
-    ['junior','senior'].forEach(year => {
-        const yearDiv = document.createElement('div');
-        yearDiv.id = year;
-        yearDiv.classList.add('timeline-container');
-        if(year === 'junior') yearDiv.style.display = 'flex';
+        // Icon mapping for different task types
+        const getIcon = (title) => {
+            const lowerTitle = title.toLowerCase();
 
-        // Filter data by grade
-        const yearItems = data.filter(item => item.grade === year);
+            if (lowerTitle.includes('counselor')) return 'fa-users';
+            if (lowerTitle.includes('college interest') || lowerTitle.includes('research')) return 'fa-search';
+            if (lowerTitle.includes('sat') || lowerTitle.includes('act') || lowerTitle.includes('preparation')) return 'fa-pen';
+            if (lowerTitle.includes('register')) return 'fa-clipboard';
+            if (lowerTitle.includes('ap exam')) return 'fa-certificate';
+            if (lowerTitle.includes('letter') || lowerTitle.includes('recommendation')) return 'fa-envelope';
+            if (lowerTitle.includes('visit') || lowerTitle.includes('college')) return 'fa-map-pin';
+            if (lowerTitle.includes('common app') || lowerTitle.includes('account')) return 'fa-laptop';
+            if (lowerTitle.includes('essay')) return 'fa-pen-fancy';
+            if (lowerTitle.includes('financial') || lowerTitle.includes('fafsa') || lowerTitle.includes('css')) return 'fa-dollar-sign';
+            if (lowerTitle.includes('submit') || lowerTitle.includes('application')) return 'fa-paper-plane';
+            if (lowerTitle.includes('decision') || lowerTitle.includes('deposit')) return 'fa-check-circle';
+            if (lowerTitle.includes('interview')) return 'fa-handshake';
+            if (lowerTitle.includes('profile')) return 'fa-user';
+            if (lowerTitle.includes('transcript') || lowerTitle.includes('grade')) return 'fa-file-alt';
+            if (lowerTitle.includes('scholarship')) return 'fa-trophy';
 
-        yearItems.forEach((item, index) => {
-            const tItem = document.createElement('div');
-            tItem.classList.add('timeline-item');
-            const icon = getIcon(item.title);
-            tItem.innerHTML = `
+            return 'fa-star'; // default icon
+        };
+
+        // Timeline
+        ['junior', 'senior'].forEach(year => {
+            const yearDiv = document.createElement('div');
+            yearDiv.id = year;
+            yearDiv.classList.add('timeline-container');
+            if (year === 'junior') yearDiv.style.display = 'flex';
+
+            // Filter data by grade
+            const yearItems = data.filter(item => item.grade === year);
+
+            yearItems.forEach((item, index) => {
+                const tItem = document.createElement('div');
+                tItem.classList.add('timeline-item');
+                const icon = getIcon(item.title);
+                tItem.innerHTML = `
                 <div class="timeline-marker">
                     <i class="fas ${icon}"></i>
                 </div>
@@ -49,12 +52,12 @@ fetch("timeline.json")
                     <h3>${item.title}</h3>
                     <p>${item.description}</p>
                 </div>`;
-            yearDiv.appendChild(tItem);
-        });
+                yearDiv.appendChild(tItem);
+            });
 
-        timelineContainer.appendChild(yearDiv);
+            timelineContainer.appendChild(yearDiv);
+        });
     });
-});
 
 // Tabs
 document.querySelectorAll('.tab-button').forEach(btn => {
@@ -67,3 +70,4 @@ document.querySelectorAll('.tab-button').forEach(btn => {
         });
     });
 });
+
